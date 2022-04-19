@@ -4,7 +4,6 @@ from django.contrib import admin
 
 
 class Document(models.Model):
-    title = models.CharField(max_length=200)
     uploadedFile = models.FileField(upload_to="Uploaded_Files/")
     dateTimeOfUpload = models.DateTimeField(auto_now=True)
 
@@ -14,4 +13,4 @@ class Document(models.Model):
 
 @admin.register(Document)
 class DocumentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'dateTimeOfUpload')
+    list_display = ('id', 'dateTimeOfUpload')

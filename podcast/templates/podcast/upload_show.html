@@ -37,7 +37,6 @@
 </head>
 <body>
     <form action="{% url 'podcast:upload_show' %}" method="POST" enctype="multipart/form-data">
-        <input type="text" name="fileTitle" placeholder="Enter a title">
         <input type="file" name="uploadedFile">
         {% csrf_token %}
         <input type="submit" value="Upload">

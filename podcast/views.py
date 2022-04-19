@@ -26,7 +26,7 @@ def uploadShow(request):
     str = ""
     if request.method == "POST":
         # Fetching the form data
-        fileTitle = request.POST["fileTitle"]
+        # fileTitle = request.POST["fileTitle"]
         uploadedFile = request.FILES["uploadedFile"]
         str = uploadedFile.read().decode('utf-8')
         # print(str)
@@ -44,6 +44,8 @@ def test(text):
 
 
 def split(text):
+    if(len(text) == 0):
+        return
     wrdvec_path = os.path.join('static', 'wrdvecs.bin')
     print(wrdvec_path)
     model = word2vec.Word2Vec.load(wrdvec_path)
